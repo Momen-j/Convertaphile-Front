@@ -1,13 +1,14 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import ConvertButton from './components/ConvertButton'
 
 const App = () => {
   return (
     <>
     <Navbar></Navbar>
-    <Hero title="Welcome to Convertaphile!" subtitle="A land of conversion"></Hero>
-    <div>App</div>
+    <Hero></Hero>
+    <ConvertButton></ConvertButton>
     </>
   )
 }

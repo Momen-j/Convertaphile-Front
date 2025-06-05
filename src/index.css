@@ -1,2 +1,25 @@
-@import "tailwindcss"
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap');
+@import "tailwindcss";
 
+@theme {
+   --color-p3-blue: #1269aa;
+  
+  /* Make Satoshi the default sans font */
+  --font-family-sans: "Satoshi", "Helvetica Neue", sans-serif;
+  
+  /* Optional: Create a separate heading font */
+  --font-family-heading: "Satoshi", sans-serif;
+}
+
+@layer base {
+  /* Apply default font to the whole document */
+  html {
+    font-family: var(--font-family-sans);
+  }
+  
+  /* Optional: Make headings use a specific font and weight */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    font-weight: 600;
+  }
+}
