@@ -2,7 +2,33 @@
 @import "tailwindcss";
 
 @theme {
-   --color-p3-blue: #1269aa;
+  /* Dark mode colors (default) */
+  --color-navbar: #222831;
+  --color-main-button: #1e3e62;
+  --color-app-bg: #31363f;
+  --color-app-text: #eeeeee;
+  --color-navbar-text: #eeeeee;
+  --color-file-list: rgba(249, 250, 251, 0.5);
+  
+  /* Light mode colors */
+  --color-navbar-light: #1e3e62;
+  --color-main-button-light: #3b82f6;
+  --color-app-bg-light: #dde6ed;
+  --color-app-text-light: #000000;
+  --color-navbar-text-light: #eeeeee;
+  --color-file-list-light: #ffffff;
+
+  /* Icon Color Scheme */
+  --color-icon-text: #ffffff;
+  --color-image-color: #00c6ff;
+  --color-image-gradient: #0072ff;
+  --color-document-color: #267871;
+  --color-document-gradient: #136a8a;
+  --color-audio-color: #6441a5;
+  --color-audio-gradient: #2a0845;
+  --color-video-color: #ff8500;
+  --color-video-gradient: #ffB900;
+  --color-glyph-color: rgba(255,255,255,0.6);
   
   /* Make Satoshi the default sans font */
   --font-family-sans: "Satoshi", "Helvetica Neue", sans-serif;
@@ -22,6 +48,14 @@
     font-family: var(--font-family-heading);
     font-weight: 600;
   }
+
+  /* Light mode styles */
+  .light {
+    --color-navbar: var(--color-navbar-light);
+    --color-main-button: var(--color-main-button-light);
+    --color-app-bg: var(--color-app-bg-light);
+    --color-app-text: var(--color-app-text-light);
+  }
 }
 
 @keyframes gradient-shift {
@@ -32,5 +66,41 @@
 
 .animate-gradient-shift {
   background-size: 200% 200%;
-  animation: gradient-shift 3s ease infinite;
+  animation: gradient-shift 6s ease infinite;
+}
+
+.bg-gradient-conic {
+  background: conic-gradient(from 0deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea);
+}
+
+@keyframes gradient-rotate {
+  0% { background: conic-gradient(from 0deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  4.17% { background: conic-gradient(from 15deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  8.33% { background: conic-gradient(from 30deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  12.5% { background: conic-gradient(from 45deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  16.67% { background: conic-gradient(from 60deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  20.83% { background: conic-gradient(from 75deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  25% { background: conic-gradient(from 90deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  29.17% { background: conic-gradient(from 105deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  33.33% { background: conic-gradient(from 120deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  37.5% { background: conic-gradient(from 135deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  41.67% { background: conic-gradient(from 150deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  45.83% { background: conic-gradient(from 165deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  50% { background: conic-gradient(from 180deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  54.17% { background: conic-gradient(from 195deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  58.33% { background: conic-gradient(from 210deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  62.5% { background: conic-gradient(from 225deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  66.67% { background: conic-gradient(from 240deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  70.83% { background: conic-gradient(from 255deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  75% { background: conic-gradient(from 270deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  79.17% { background: conic-gradient(from 285deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  83.33% { background: conic-gradient(from 300deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  87.5% { background: conic-gradient(from 315deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  91.67% { background: conic-gradient(from 330deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  95.83% { background: conic-gradient(from 345deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+  100% { background: conic-gradient(from 360deg, #9333ea, #ea580c, #16a34a, #3b82f6, #9333ea); }
+}
+
+.animate-gradient-rotate {
+  animation: gradient-rotate 8s linear infinite;
 }
