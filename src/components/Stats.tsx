@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { BsDatabaseFillDown } from 'react-icons/bs';
-import { FcProcess } from 'react-icons/fc';
 import { SiConvertio } from 'react-icons/si';
 
 interface ConversionStats {

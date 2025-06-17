@@ -1,6 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { getFileType } from '../utils/getFileType';
-import { isAudioConversionAllowed } from '../utils/isAudioConversionAllowed';
 
 const FormatDropdown = ({
   // State props
