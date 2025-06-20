@@ -155,7 +155,7 @@ const ConvertButton = () => {
       console.log(`Converting ${uploadedFile.name} to ${selectedFormat}`);
 
       // MAKE POST REQUEST TO SERVER
-      const response = await fetch("http://localhost:8080/conversion", {
+      const response = await fetch("https://convertaphile-production.up.railway.app/conversion", {
         method: "POST",
         body: formData,
       });
@@ -200,7 +200,7 @@ const ConvertButton = () => {
 
       // Make request to download endpoint using the conversion ID
       const response = await fetch(
-        `http://localhost:8080/download/${conversionMetadata.conversionId}`,
+        `https://convertaphile-production.up.railway.app/download/${conversionMetadata.conversionId}`,
         {
           method: "GET",
         }
