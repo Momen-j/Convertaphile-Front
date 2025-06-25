@@ -40,8 +40,8 @@ const Stats = () => {
 
     fetchStats();
 
-    // Set up interval to fetch every 1 second
-    const interval = setInterval(fetchStats, 1000);
+    // Set up interval to fetch every 60 seconds
+    const interval = setInterval(fetchStats, 60000);
 
     // Cleanup interval on unmount
     return () => clearInterval(interval);
