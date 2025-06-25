@@ -12,7 +12,7 @@
 
 ## 🔗 How It Works
 
-Convertaphile's backend functions as a microservice:
+Convertaphile's [backend](https://github.com/Momen-j/Convertaphile) functions as a microservice:
 
 1. Users send a `POST` request with a file and desired output format to the `/conversion` endpoint.
 2. The server saves the uploaded file to a secure, temporary location.
