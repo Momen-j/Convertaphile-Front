@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:no-typecheck": "vite build --mode production",
+    "build:no-typecheck": "vite build --mode production && powershell -Command \"Remove-Item -Recurse -Force docs -ErrorAction SilentlyContinue; Copy-Item -Recurse dist docs\"",
     "lint": "eslint .",
     "preview": "vite preview"
   },
