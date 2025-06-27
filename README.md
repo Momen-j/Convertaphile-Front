@@ -1,54 +1,24 @@
-# React + TypeScript + Vite
+# Convertaphile: Universal Media Converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Convertaphile** is a powerful, high-performance website built with Typescript & React on the frontend & Kotlin and Ktor on the backend that leverages FFmpeg for seamless conversion between a wide array of image, video, and audio formats. Whether you need to optimize images for the web, change video formats, or extract audio, Convertaphile provides an efficient solution.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Comprehensive Media Conversion:** Convert between popular image, video, and audio formats.
+  - **Images:** JPG/JPEG, PNG, WEBP, GIF, BMP, TIFF, AVIF
+  - **Video:** MP4, AVI, MOV, WEBM, WMV, MKV
+  - **Audio:** MP3, AAC, FLAC, OGG, WAV, M4A
+- **RESTful API:** Clean and intuitive API endpoints for file uploads and conversions.
 
-## Expanding the ESLint configuration
+## 🔗 How It Works
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Convertaphile's [backend](https://github.com/Momen-j/Convertaphile) functions as a microservice:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Users send a `POST` request with a file and desired output format to the `/conversion` endpoint.
+2. The server saves the uploaded file to a secure, temporary location.
+3. The file is analyzed to determine its exact type and characteristics.
+4. Based on the detected type and requested output, FFmpeg is invoked with specific, optimized commands to perform the conversion.
+5. The converted file is streamed back to the user with appropriate HTTP headers (e.g., `Content-Disposition` for download).
+6. All temporary files are immediately deleted from the server.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+This ensures privacy, efficiency, and a clean server environment.
