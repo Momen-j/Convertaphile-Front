@@ -39,12 +39,6 @@ const Stats = () => {
     };
 
     fetchStats();
-
-    // Set up interval to fetch every 60 seconds
-    const interval = setInterval(fetchStats, 60000);
-
-    // Cleanup interval on unmount
-    return () => clearInterval(interval);
   }, []);
 
   const formatSize = (sizeMB: number): string => {
